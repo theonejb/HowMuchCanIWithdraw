@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>How much can I withdraw?</title>
+    <link rel="stylesheet" href="./dist/css/main.css">
+</head>
+
+<body class="bg-yellow-100 py-1">
+    <h1 class="font-serif text-center text-2xl">How much can I withdraw?</h1>
+
+    <div class="max-w-xs m-auto mt-2">
+        <form class="bg-yellow-300 shadow-md rounded p-4 m-0">
+            <label for="balance" class="block">
+                Balance
+            </label>
+            <input type="number" min="0.0" step="0.01" id="balance" value="0.0" placeholder="Enter card balance"
+                class="mt-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <label for="fixed-fees" class="block mt-4">
+                Any fixed fees?
+            </label>
+            <input type="number" min="0.0" step="0.01" id="fixed-fees" value="0.00"
+                class="mt-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <label for="percentage-fees" class="block mt-4">
+                Any percentage fees?
+            </label>
+            <input type="number" min="0.0" max="100.0" step="0.01" id="percentage-fees" value="0.00"
+                class="mt-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            <button id="calculate-btn" type="submit"
+                class="mt-4 shadow appearance-none w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">Calculate</button>
+            <p class="text-xl text-center mt-2 hidden">You can withdraw $<span id="withdrawal-amount">0.0</span></p>
+        </form>
+    </div>
+
+    <span id="what-is-this-toggle" class="cursor-pointer m-auto w-32 text-center block mt-1">
+        What is this?
+    </span>
+    <div id="what-is-this" class="hidden">
+        <p class="font-serif w-1/2 m-auto text-lg mt-2 leading-relaxed">
+            As a freelancer, I rely on 3rd party payment service providers, like Toptal Payments, and Payoneer to access
+            my earning. Such services usually have a fee for each transaction.
+        </p>
+
+        <p class="font-serif w-1/2 m-auto text-lg mt-2 leading-relaxed">
+            Everytime I go to withdraw money from the debit card provided by these services, I have to first pull out a
+            calculator and figure out how much I can withdraw, given the amount of money in my card. This utility web app
+            is built to replace that friction point.
+        </p>
+    </div>
+    <script src="./dist/js/main.js"></script>
+</body>
+
+</html>
